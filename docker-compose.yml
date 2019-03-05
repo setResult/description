@@ -1,0 +1,20 @@
+version: '2'
+services:
+  desc:
+    image: registry.aliyuncs.com/tianli/desc
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai
+    labels:
+      aliyun.log_store_dev_admin: stdout
+  nginx:
+    image: annat/nginx-for-proxy
+    restart: always
+    environment:
+      - URL_0=http://desc:8080
+      - PATH_0=/api
+      - DEFAULT_URL=http://tianli-luxury-dev.file.tianli.shop
+    links:
+      - desc:desc
+    labels:
+      aliyun.routing.port_80: 'http://luxury-admin-dev.tianli.shop'
