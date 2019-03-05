@@ -6,7 +6,7 @@ services:
     environment:
       - TZ=Asia/Shanghai
     labels:
-      aliyun.log_store_dev_admin: stdout
+      aliyun.log_store_desc: stdout
   nginx:
     image: annat/nginx-for-proxy
     restart: always
