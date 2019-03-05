@@ -24,6 +24,7 @@ public enum ErrorCodeEnum {
     SYSTEM_BUSY(1011, "系统繁忙,请稍后再试"),
     HTTP_MESSAGE_NOT_READABLE(1012, "请求参数无法读取"),
     MISSING_REQUEST_PARAMETER(1013, "请求参数缺失"),
+    NETWORK_ACCESS_ERROR(1014, "网络访问错误"),
     /*** －－－－－－基础错误码 END－－－－－－*/
 
 
