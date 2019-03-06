@@ -1,5 +1,6 @@
 package org.aomr.desc.controller;
 
+import org.aomr.desc.dto.BaseCondition;
 import org.aomr.desc.dto.Result;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,6 +23,12 @@ public class IndexController {
     @GetMapping("/")
     public Result index() {
         return new Result<>("Hello World");
+    }
+
+
+    @PostMapping("/")
+    public Result index(@RequestBody BaseCondition condition) {
+        return new Result<>("Hello World -->" + condition.toString());
     }
 
 }
