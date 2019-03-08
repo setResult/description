@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    druid:
+      url:  jdbc:mysql://localhost:3306/description?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&verifyServerCertificate=false&useSSL=false&useAffectedRows=true
+      driver-class-name:  com.mysql.jdbc.Driver
+      username:  root
+      password:  "root"
+      initial-size:  10
+      max-active:  50
+      min-idle:  10
+      max-wait:  60000
+      pool-prepared-statements:  true
+      max-pool-prepared-statement-per-connection-size:  20
+      validation-query:  SELECT 1 FROM DUAL
+      test-on-borrow:  false
+      test-on-return:  false
+      test-while-idle:  true
+      time-between-eviction-runs-millis:  60000
+      filters:  stat,wall,log4j
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password: "password"
+    timeout: 0ms
+  redis-cache:
+    database: 1
+    host: 127.0.0.1
+    port: 6379
+    password: "password"
+    timeout: 0ms
